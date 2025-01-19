@@ -8,8 +8,30 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+
 @Service("CLOSEST_SUM")
 public class ClosestSumScheduleCharging implements ScheduleCharging {
+
+    /**
+     * This method schedules the charging of vehicles based on available chargers and their remaining capacity.
+     * It uses closest sum approach to assign vehicles to chargers, ensuring the chargers' capacities are utilized optimally.
+     *
+     * Steps:
+     * 1. Initializes the remaining capacity of each charger based on the charging rate and the number of hours.
+     * 2. Uses a two-pointer technique to find the most suitable vehicles for each charger. Vehicles are assigned to chargers in a way that maximizes the utilization of available charger capacity.
+     * 3. The `findClosestVehicle` method finds the vehicles that can be charged by a charger, either a pair of vehicles or a single one, based on the remaining capacity.
+     * 4. The schedule is updated with each charger’s assigned vehicles.
+     * 5. Once a vehicle is assigned to a charger, its required charging amount is deducted from the charger’s remaining capacity.
+     * 6. The process continues until all vehicles are assigned or no suitable charger can be found.
+     *
+     * Note:
+     * - The method keeps track of remaining vehicles and chargers and ensures that no charger is overloaded.
+     * - If no vehicle can be assigned to a charger, the charger is removed from the list of available chargers.
+     *
+     * @param scheduleRequest Contains the list of vehicles, chargers, and the total charging hours.
+     * @return A map of charger IDs to the list of assigned vehicle IDs.
+     */
+
 
     @Override
     public Map<Integer, List<Integer>> scheduleCharging(ScheduleRequest scheduleRequest) {
