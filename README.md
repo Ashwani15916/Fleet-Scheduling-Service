@@ -9,8 +9,7 @@ This project is a Spring Boot application that provides a service for scheduling
 - [Technologies Used](#technologies-used)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [API](#api)
-- [License](#license)
+- [Testing the API](#testing-the-api)
 
 ## **Overview**
 This Spring Boot application calculates an optimal schedule for charging trucks. The scheduling is based on a specific algorithm (the "Closest Sum Algorithm"), which pairs trucks with chargers in such a way that minimizes charging waste. The system takes into account the number of hours the chargers will be active, the trucks' charging needs, and the available charger capacity.
@@ -55,7 +54,7 @@ The application will start running on `http://localhost:8080` (or another port, 
 - **Maven**: Dependency management and build automation tool.
 - **Java 11**: Language used for the application development.
   
-## **Testing the API **
+## **Testing the API**
 To test the API, you can send a GET request to the endpoint /api/v1/charging/schedule. Below is an example of how to test the service using a curl command.
 
 curl --location --request GET 'http://localhost:8080/api/v1/charging/schedule' \
