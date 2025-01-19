@@ -11,6 +11,7 @@ import java.util.*;
 @Service("CLOSEST_SUM")
 public class ClosestSumScheduleCharging implements ScheduleCharging {
 
+
     @Override
     public Map<Integer, List<Integer>> scheduleCharging(ScheduleRequest scheduleRequest) {
         Map<Integer, List<Integer>> schedule = new HashMap<>();
