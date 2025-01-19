@@ -7,8 +7,6 @@ This project is a Spring Boot application that provides a service for scheduling
 - [Features](#features)
 - [Getting Started](#getting-started)
 - [Technologies Used](#technologies-used)
-- [Configuration](#configuration)
-- [Usage](#usage)
 - [Testing the API](#testing-the-api)
 
 ## **Overview**
