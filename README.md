@@ -55,9 +55,41 @@ The application will start running on `http://localhost:8080` (or another port, 
 - **Maven**: Dependency management and build automation tool.
 - **Java 11**: Language used for the application development.
   
-## **Configuration**
+## **Testing the API **
+To test the API, you can send a GET request to the endpoint /api/v1/charging/schedule. Below is an example of how to test the service using a curl command.
 
-You can configure the number of hours for charging or any other parameters via the application properties file (`application.properties`). For example:
+curl --location --request GET 'http://localhost:8080/api/v1/charging/schedule' \
+--header 'Content-Type: application/json' \
+--data '{
+  "vehicles": [
+    {
+      "id": 1,
+      "batteryCapacity": 50,
+      "currentCharge": 10
+    },
+    {
+      "id": 2,
+      "batteryCapacity": 90,
+      "currentCharge": 20
+    },
+    {
+      "id": 3,
+      "batteryCapacity": 80,
+      "currentCharge": 50
+    }
+  ],
+  "chargers": [
+    {
+      "id": 1,
+      "rate": 20
+    },
+    {
+      "id": 2,
+      "rate": 30
+    }
+  ],
+  "hours": 2
+}'
 
-```properties
-charging.hours=5
+
+
